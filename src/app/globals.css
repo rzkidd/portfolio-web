@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -17,17 +19,29 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  /* color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
+    font-family: "Raleway", sans-serif;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+  
+}
+
+#heading::after {
+  content: "";
+  position: absolute;
+  height: 24rem;
+  bottom: 0;
+  right: 0;
+  z-index: -100 !important;
+  background: linear-gradient(270deg, rgba(0,0,0,0.5), rgba(6, 70, 78,1)), url('../../public/illustration.png') no-repeat center top / cover;
 }
