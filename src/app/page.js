@@ -162,7 +162,7 @@ export default function Home() {
         <h2 className="text-3xl font-semibold text-color-green mt-10" id="contact">Contact Me</h2>
         <div className="mt-10 w-4/5 lg:w-1/2 grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-5">
           {contacts.map((contact) => 
-            <Contact icon={contact.icon} name={contact.name} link={contact.link} color={contact.color}/>
+            <Contact icon={contact.icon} name={contact.name} link={contact.link} color={contact.color} key={`1_${contact.name}`} />
           )}
           
         </div>

@@ -29,7 +29,7 @@ export default function Experience({date, role, company, link, content}){
                     <Timeline.Body className="text-color-green mt-5">
                         <ul className="list-disc ms-5">
                             {content.map((content) => 
-                                <li>{content}</li>
+                                <li key={`1_${content.length}`}>{content}</li>
                             )}
                         </ul>
                     </Timeline.Body>

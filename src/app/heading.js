@@ -84,7 +84,7 @@ export default function Heading() {
             </Dialog>
 
             <div className="h-full w-4/5 flex flex-col justify-center text-color-green ">
-                <h1 className="text-3xl">I'm <span className="text-color-light-green text-4xl font-bold">Reza Saputra</span></h1>
+                <h1 className="text-3xl">I&apos;m <span className="text-color-light-green text-4xl font-bold">Reza Saputra</span></h1>
                 <h2 className="text-xl font-medium">Web Developer</h2>
                 <a href="" className="w-fit border-[3px] border-color-light-green text-color-light-green px-3 py-2 rounded-lg mt-5 font-semibold hover:bg-color-light-green hover:text-color-med-green transition ease-in duration-200">Contact Me</a>
             </div>
