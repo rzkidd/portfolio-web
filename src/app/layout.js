@@ -13,13 +13,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-      <Script>
+      <Script id="taos">
         {script}
       </Script>
       </head>
       <body >
         {children}
-        <script src={src}></script>
+        <Script src={src} id="taos_2"></Script>
       </body>
     </html>
   );
