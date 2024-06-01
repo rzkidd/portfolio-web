@@ -69,10 +69,7 @@ export default function Home() {
         role: 'Technical Developer | Part time',
         company: 'Acunomic',
         link: 'https://acunomic.com',
-        content: [`Championed the development of a cutting-edge library for extracting bank information from EBICS, demonstrating
-        expertise in fnancial data integration. Seamlessly integrated the library into the Acumatica ERP system, optimizing
-        fnancial processes and enhancing efciency. This achievement underscores profciency in both software development and
-        ERP integration, contributing to streamlined operations and improved decision-making within the organization.`]
+        content: [`Championed the development of a cutting-edge library for extracting bank information from EBICS, demonstrating expertise in financial data integration. Seamlessly integrated the library into the Acumatica ERP system, optimizing financial processes and enhancing efficiency. This achievement underscores proficiency in both software development and ERP integration, contributing to streamlined operations and improved decision-making within the organization.`]
     },
     {
         date: 'January 2023 - December 2023',
@@ -97,10 +94,8 @@ export default function Home() {
         company: 'Fashion Campus e-commerce API project by Startup Campus Bootcamp Program',
         link: '',
         content: [
-            `Engineered a robust API for the Fashion Campus e-commerce platform utilizing Python and Flask, facilitating seamless
-            communication between frontend and backend systems.`,
-            `Successfully orchestrated the deployment of both frontend and backend components of Fashion Campus on the Google
-            Cloud Platform, ensuring scalability, reliability, and optimal performance.`,
+            `Engineered a robust API for the Fashion Campus e-commerce platform utilizing Python and Flask, facilitating seamless communication between frontend and backend systems.`,
+            `Successfully orchestrated the deployment of both frontend and backend components of Fashion Campus on the Google Cloud Platform, ensuring scalability, reliability, and optimal performance.`,
             `Spearheaded a team of 3 full-stack developers in building a robust API for an e-commerce application.`
         ]
     },
@@ -140,8 +135,8 @@ export default function Home() {
       <a href="#" className="fixed right-5 bottom-5">
         <FontAwesomeIcon icon={faCircleChevronUp} className="text-5xl text-color-light-green"/>
       </a>
-      <About />
-      <section className="w-full flex flex-col items-center mt-20">
+      <About  />
+      <section className="w-full flex flex-col items-center mt-10 p-32 delay-[150ms] duration-[600ms] taos:[transform:translate3d(0,200px,0)_scale(0.6)] taos:opacity-0 [animation-iteration-count:infinite]" data-taos-offset="300">
         <h2 className="text-3xl font-semibold text-color-green">My Skills</h2>
         <div className="mt-5 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-10">
           {mySkills.map((mySkill) => 
@@ -149,9 +144,9 @@ export default function Home() {
           )}
         </div>
       </section>
-      <Portfolio />
-      <section className="w-full flex flex-col items-center mt-20 bg-color-med-green/30">
-        <h2 className="text-3xl font-semibold text-color-green mt-10">Experience</h2>
+      <Portfolio/>
+      <section className="w-full flex flex-col items-center mt-20 bg-color-med-green/30 delay-[150ms] duration-[600ms] taos:[transform:translate3d(0,200px,0)_scale(0.6)] taos:opacity-0 [animation-iteration-count:infinite]" data-taos-offset="300">
+        <h2 className="text-3xl font-semibold text-color-green mt-32">Experience</h2>
         <div className="mt-10 w-4/5 lg:w-1/2">
           {experience.map((exp) => 
             <Experience date={exp.date} role={exp.role} company={exp.company} link={exp.link} content={exp.content} key={1 + '_' + exp.role}/>

@@ -39,7 +39,7 @@ body {
 #heading::after {
   content: "";
   position: absolute;
-  height: 24rem;
+  height: 100vh;
   bottom: 0;
   right: 0;
   z-index: -100 !important;
