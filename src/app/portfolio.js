@@ -6,6 +6,21 @@ import Image from "next/image";
 
 export default function Portfolio(){
 
+    const portfolios = [
+        {
+            title: 'bts',
+            link: '/bts.png'
+        },
+        {
+            title: 'pos-bengkel',
+            link: '/pos-bengkel.png'
+        },
+        {
+            title: 'fashion-campus',
+            link: '/fashion-campus.png'
+        },
+    ]
+
     return (
         <section className="w-full mt-10 pt-10" id="portfolio">
             <div className="w-full flex flex-col items-center delay-[150ms] duration-[600ms] taos:[transform:translate3d(0,200px,0)_scale(0.6)] taos:opacity-0 [animation-iteration-count:infinite]" data-taos-offset="300">
@@ -15,9 +30,15 @@ export default function Portfolio(){
                         leftControl={<FontAwesomeIcon icon={faCircleChevronLeft} className="text-3xl text-color-med-green" />} 
                         rightControl={<FontAwesomeIcon icon={faCircleChevronRight} className="text-3xl text-color-med-green" />}
                     >
-                            <img src="/iot-smart-classroom.jpeg" className="h-4/5 object-contain"/>
-                            <img src="/kliniku.jpeg" className="h-4/5 object-contain"/>
-                            <img src="/bts.png" className="h-4/5 object-contain"/>
+                        {
+                            portfolios.map((portfolio) => 
+                                <div className="h-4/5 flex justify-center" key={portfolio.title}>
+                                    <a href={"/portfolio?title=" + portfolio.title} className="">
+                                        <img src={portfolio.link} className="h-full object-contain"/>
+                                    </a>
+                                </div>
+                            )
+                        }
                     </Carousel>
                 </div>
             </div>

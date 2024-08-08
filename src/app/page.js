@@ -136,12 +136,14 @@ export default function Home() {
         <FontAwesomeIcon icon={faCircleChevronUp} className="text-5xl text-color-light-green"/>
       </a>
       <About  />
-      <section className="w-full flex flex-col items-center mt-10 p-32 delay-[150ms] duration-[600ms] taos:[transform:translate3d(0,200px,0)_scale(0.6)] taos:opacity-0 [animation-iteration-count:infinite]" data-taos-offset="300">
-        <h2 className="text-3xl font-semibold text-color-green">My Skills</h2>
-        <div className="mt-5 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-10">
-          {mySkills.map((mySkill) => 
-            <Skill srcImage={mySkill.srcImage} text={mySkill.text} key={1 + '_' + mySkill.text}/>
-          )}
+      <section className="w-full mt-96 pt-96  " id="mySkills">
+        <div className="w-full flex flex-col items-center delay-[150ms] duration-[600ms] taos:[transform:translate3d(0,200px,0)_scale(0.6)] taos:opacity-0 [animation-iteration-count:infinite]" data-taos-offset="100">
+          <h2 className="text-3xl font-semibold text-color-green">My Skills</h2>
+          <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-10">
+            {mySkills.map((mySkill) => 
+              <Skill srcImage={mySkill.srcImage} text={mySkill.text} key={1 + '_' + mySkill.text}/>
+            )}
+          </div>
         </div>
       </section>
       <Portfolio/>

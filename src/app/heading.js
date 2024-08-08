@@ -9,7 +9,7 @@ export default function Heading() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     return (
-        <header id="heading" className="!bg-color-med-green/30 h-[100vh] w-full flex flex-col items-center shadow-lg relative after:sm:w-72 after:md:w-1/2 z-50">
+        <header id="heading-home" className="!bg-color-med-green/30 h-[100vh] w-full flex flex-col items-center shadow-lg relative after:sm:w-72 after:md:w-1/2 z-50">
             <nav
                 className="mx-auto flex w-4/5 items-center justify-between pt-5"
                 aria-label="Global"
