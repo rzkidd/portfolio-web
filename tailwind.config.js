@@ -1,4 +1,4 @@
-import flowbite from "flowbite-react/tailwind"
+import flowbite from "flowbite-react/tailwind";
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   // content: [
@@ -10,14 +10,14 @@ module.exports = {
   // ],
   content: {
     relative: true,
-    transform: (content) => content.replace(/taos:/g, ''),
+    transform: (content) => content.replace(/taos:/g, ""),
     files: [
       "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
       "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
       "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
       // "./node_modules/flowbite-react/lib/**/*.js",
-      flowbite.content()
-    ]
+      flowbite.content(),
+    ],
   },
   theme: {
     extend: {
@@ -27,21 +27,22 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        'color-dark-green': '#003C43',
-        'color-med-green': '#135D66',
-        'color-green': '#77B0AA',
-        'color-light-green': '#E3FEF7'
-      }
+        background: "#0B1220",
+        card: "#111827",
+        secondary: "#38BDF8",
+        textMain: "#F9FAFB",
+        textMuted: "#9CA3AF",
+      },
     },
   },
   plugins: [
-    require('@tailwindcss/forms'),
+    require("@tailwindcss/forms"),
     flowbite.plugin(),
-    require('taos/plugin')
+    require("taos/plugin"),
   ],
   safelist: [
-    '!duration-[0ms]',
-    '!delay-[0ms]',
-    'html.js :where([class*="taos:"]:not(.taos-init))'
-  ]
+    "!duration-[0ms]",
+    "!delay-[0ms]",
+    'html.js :where([class*="taos:"]:not(.taos-init))',
+  ],
 };

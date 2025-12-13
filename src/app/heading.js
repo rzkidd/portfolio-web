@@ -1,93 +1,123 @@
 "use client";
 
 import { Fragment, useState } from "react";
-import { Description, Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
+import {
+  Description,
+  Dialog,
+  DialogPanel,
+  DialogTitle,
+} from "@headlessui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 
 export default function Heading() {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-    return (
-        <header id="heading-home" className="!bg-color-med-green/30 h-[100vh] w-full flex flex-col items-center shadow-lg relative after:sm:w-72 after:md:w-1/2 z-50">
-            <nav
-                className="mx-auto flex w-4/5 items-center justify-between pt-5"
-                aria-label="Global"
-            >
-                <div className="flex md:hidden">
-                    <button
-                        type="button"
-                        className="inline-flex items-center justify-center rounded-md text-color-green hover:text-color-light-green"
-                        onClick={() => setMobileMenuOpen(true)}
-                    >
-                        <span className="sr-only">Open main menu</span>
-                        <FontAwesomeIcon icon={fas.faBars} className="h-6 w-6" aria-hidden="true"/>
-                    </button>
-                </div>
-                <div className="hidden md:flex items-center justify-between w-1/2 lg:w-1/4 text-color-green font-medium">
-                    <a href="#about" className="hover:text-color-light-green">About</a>
-                    <a href="#portfolio" className="hover:text-color-light-green">Portfolio</a>
-                    <a href="#contact" className="hover:text-color-light-green">Contact</a>
-                </div>
-                {/* <label className="relative flex justify-end z-10">
-                    <span className="absolute inset-y-0 right-5 flex items-center pl-2">
-                    <FontAwesomeIcon icon={fas.faMagnifyingGlass} className="h-5 w-5 text-color-green"/>
+  return (
+    <header
+      id="heading-home"
+      className="!bg-background h-[100vh] w-full flex flex-col items-center shadow-lg relative after:sm:w-72 after:md:w-1/2 z-50"
+    >
+      <nav
+        className="flex items-center justify-between w-4/5 pt-5 mx-auto"
+        aria-label="Global"
+      >
+        <div className="flex md:hidden">
+          <button
+            type="button"
+            className="inline-flex items-center justify-center rounded-md text-secondary "
+            onClick={() => setMobileMenuOpen(true)}
+          >
+            <span className="sr-only">Open main menu</span>
+            <FontAwesomeIcon
+              icon={fas.faBars}
+              className="w-6 h-6"
+              aria-hidden="true"
+            />
+          </button>
+        </div>
+        <div className="items-center justify-between hidden w-1/2 font-medium md:flex lg:w-1/4 text-textMain">
+          <a href="#about" className="hover:text-secondary">
+            About
+          </a>
+          <a href="#portfolio" className="hover:text-secondary">
+            Portfolio
+          </a>
+          <a href="#contact" className="hover:text-secondary">
+            Contact
+          </a>
+        </div>
+        {/* <label className="relative z-10 flex justify-end">
+                    <span className="absolute inset-y-0 flex items-center pl-2 right-5">
+                    <FontAwesomeIcon icon={fas.faMagnifyingGlass} className="w-5 h-5 text-color-green"/>
                     </span>
-                    <input type={"text"} className="form-input rounded-xl bg-color-green/30 placeholder:text-color-green  border-none w-3/4 text-color-light-green font-medium focus:ring-color-green" placeholder="Search"></input>
+                    <input type={"text"} className="w-3/4 font-medium border-none form-input rounded-xl bg-color-green/30 placeholder:text-color-green text-color-light-green focus:ring-color-green" placeholder="Search"></input>
                 </label> */}
-            </nav>
-            <Dialog
-                className="md:hidden"
-                open={mobileMenuOpen}
-                onClose={setMobileMenuOpen}
+      </nav>
+      <Dialog
+        className="md:hidden"
+        open={mobileMenuOpen}
+        onClose={setMobileMenuOpen}
+      >
+        <div className="fixed inset-0 z-20" />
+        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full px-6 py-6 overflow-y-auto border-0 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 bg-card">
+          <div className="flex items-center justify-between">
+            <button
+              type="button"
+              className="-m-2.5 rounded-md p-2.5 text-textMain"
+              onClick={() => setMobileMenuOpen(false)}
             >
-                <div className="fixed inset-0 z-20" />
-                <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 border-0" style={{ backgroundColor: 'rgba(6, 70, 78,1)' }}>
-                    <div className="flex items-center justify-between">
-                        <button
-                            type="button"
-                            className="-m-2.5 rounded-md p-2.5 text-color-green hover:text-color-light-green"
-                            onClick={() => setMobileMenuOpen(false)}
-                        >
-                            <span className="sr-only">Close menu</span>
-                            <FontAwesomeIcon icon={fas.faXmark} className="h-6 w-6" aria-hidden="true" />
-                        </button>
-                    </div>
-                    <div className="mt-6 flow-root">
-                        <div className="-my-6 divide-y ">
-                            <div className="space-y-2 py-6 text-color-green">
-                                <a
-                                    href="#about"
-                                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-color-light-green hover:text-color-med-green"
-                                    onClick={() => setMobileMenuOpen(false)}
-                                >
-                                    About
-                                </a>
-                                <a
-                                    href="#portfolio"
-                                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-color-light-green hover:text-color-med-green"
-                                    onClick={() => setMobileMenuOpen(false)}
-                                >
-                                    Portfolio
-                                </a>
-                                <a
-                                    href="#contact"
-                                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-color-light-green hover:text-color-med-green"
-                                    onClick={() => setMobileMenuOpen(false)}
-                                >
-                                    Contact
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </DialogPanel>
-            </Dialog>
-
-            <div className="h-full w-4/5 flex flex-col justify-center text-color-green ">
-                <h1 className="text-3xl">I&apos;m <span className="text-color-light-green text-4xl font-bold">Reza Saputra</span></h1>
-                <h2 className="text-xl font-medium">Web Developer</h2>
-                <a href="#contact" className="w-fit border-[3px] border-color-light-green text-color-light-green px-3 py-2 rounded-lg mt-5 font-semibold hover:bg-color-light-green hover:text-color-med-green transition ease-in duration-200">Contact Me</a>
+              <span className="sr-only">Close menu</span>
+              <FontAwesomeIcon
+                icon={fas.faXmark}
+                className="w-6 h-6"
+                aria-hidden="true"
+              />
+            </button>
+          </div>
+          <div className="flow-root mt-6">
+            <div className="-my-6 divide-y ">
+              <div className="py-6 space-y-2 text-textMain">
+                <a
+                  href="#about"
+                  className="block px-3 py-2 -mx-3 text-base font-semibold leading-7 rounded-lg hover:text-secondary"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  About
+                </a>
+                <a
+                  href="#portfolio"
+                  className="block px-3 py-2 -mx-3 text-base font-semibold leading-7 rounded-lg hover:text-secondary"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Portfolio
+                </a>
+                <a
+                  href="#contact"
+                  className="block px-3 py-2 -mx-3 text-base font-semibold leading-7 rounded-lg hover:text-secondary"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Contact
+                </a>
+              </div>
             </div>
-        </header>
-    );
+          </div>
+        </DialogPanel>
+      </Dialog>
+
+      <div className="flex flex-col justify-center w-4/5 h-full text-textMain ">
+        <h1 className="text-3xl">
+          I&apos;m{" "}
+          <span className="text-4xl font-bold text-textMain">Reza Saputra</span>
+        </h1>
+        <h2 className="text-xl font-medium text-secondary">Web Developer</h2>
+        <a
+          href="#contact"
+          className="px-8 py-3 mt-5 transition duration-200 ease-in rounded-lg w-fit text-textMain bg-card hover:shadow-md"
+        >
+          Contact Me
+        </a>
+      </div>
+    </header>
+  );
 }

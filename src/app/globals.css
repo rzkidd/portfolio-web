@@ -43,5 +43,5 @@ body {
   bottom: 0;
   right: 0;
   z-index: -100 !important;
-  background: linear-gradient(270deg, rgba(0,0,0,0.5), rgba(6, 70, 78,1)), url('../../public/illustration.png') no-repeat center top / cover;
+  background: linear-gradient(270deg, rgba(0,0,0,0.6), #0B1220), url('../../public/illustration.png') no-repeat center top / cover;
 }
