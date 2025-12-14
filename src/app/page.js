@@ -1,10 +1,10 @@
 "use client";
-import About from "./about";
-import Contact from "./contact";
-import Experience from "./experience";
-import Heading from "./heading";
-import Portfolio from "./portfolio";
-import Skill from "./skill";
+import About from "./_components/about";
+import Contact from "./_components/contact";
+import Experience from "./_components/experience";
+import Heading from "./_components/heading";
+import Portfolio from "./_components/portfolio";
+import Skill from "./_components/skill";
 import {
   faGithub,
   faLinkedin,
