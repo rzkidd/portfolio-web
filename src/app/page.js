@@ -25,25 +25,7 @@ import {
 } from "flowbite-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { DateTime } from "luxon";
-
-const customTheme = createTheme({
-  textInput: {
-    field: {
-      input: {
-        colors: {
-          secondary:
-            "bg-card text-textMain border-secondary focus:border-secondary focus:ring-secondary",
-        },
-      },
-    },
-  },
-  textArea: {
-    colors: {
-      secondary:
-        "bg-card text-textMain border-secondary focus:border-secondary focus:ring-secondary",
-    },
-  },
-});
+import ContactMe from "./_components/contactMe";
 
 export default function Home() {
   const mySkills = [
@@ -217,62 +199,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="flex flex-col items-center w-full my-10">
-        <h2 className="text-3xl font-semibold text-textMain" id="contact">
-          Contact Me
-        </h2>
-        <form className="flex flex-col w-4/5 gap-4 lg:w-1/2">
-          <div>
-            <div className="block mb-2 ">
-              <Label htmlFor="email" className="text-textMain ">
-                Your email
-              </Label>
-            </div>
-            <TextInput
-              id="email"
-              type="email"
-              placeholder="Your email address"
-              required
-              theme={customTheme.textInput}
-              color="secondary"
-            />
-          </div>
-          <div>
-            <div className="block mb-2">
-              <Label htmlFor="message" className="text-textMain">
-                Message
-              </Label>
-            </div>
-            <Textarea
-              id="message"
-              type="text"
-              required
-              sizing="lg"
-              rows={4}
-              theme={customTheme.textArea}
-              color={"secondary"}
-              placeholder="Your message here..."
-            />
-          </div>
-          <Button
-            type="submit"
-            className="bg-secondary border-secondary text-textMain hover:!bg-card hover:border-secondary hover:text-textMain"
-          >
-            Send
-          </Button>
-        </form>
-        <div className="grid w-4/5 grid-cols-2 gap-5 mt-10 lg:grid-cols-4">
-          {contacts.map((contact) => (
-            <Contact
-              icon={contact.icon}
-              name={contact.name}
-              link={contact.link}
-              color={contact.color}
-              key={`1_${contact.name}`}
-            />
-          ))}
-        </div>
-      </section>
+      <ContactMe contacts={contacts} />
       <Footer container className="bg-background">
         <Footer.Copyright
           href="#"
