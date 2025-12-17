@@ -50,7 +50,7 @@ export default function Portfolio() {
               <div className="flex flex-col text-textMain">
                 <h3 className="text-lg ">
                   <a
-                    href=""
+                    href={`/portfolio?title=${portfolio.title}`}
                     className="hover:underline hover:decoration-secondary"
                   >
                     {portfolio.name}
@@ -67,12 +67,12 @@ export default function Portfolio() {
                   ))}
                 </div>
                 <div className="flex mt-5 space-x-3">
-                  <Button className="bg-transparent border-secondary text-secondary hover:!bg-transparent hover:text-textMain hover:scale-105 transition-all">
+                  {/* <Button className="bg-transparent border-secondary text-secondary hover:!bg-transparent hover:text-textMain hover:scale-105 transition-all">
                     Live Demo
                   </Button>
                   <Button className="bg-transparent border-secondary text-secondary hover:!bg-transparent hover:text-textMain hover:scale-105 transition-all">
                     Github Repo
-                  </Button>
+                  </Button> */}
                 </div>
               </div>
             </div>

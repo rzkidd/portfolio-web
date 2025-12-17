@@ -9,14 +9,19 @@ import {
 } from "@headlessui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { fas } from "@fortawesome/free-solid-svg-icons";
+import Hero from "./hero";
+import { usePathname } from "next/navigation";
 
 export default function Heading() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const pathName = usePathname();
   return (
     <header
-      id="heading-home"
-      className="!bg-background h-[100vh] w-full flex flex-col items-center shadow-lg relative after:sm:w-72 after:md:w-1/2 z-50"
+      id={pathName === "/" ? "heading-home" : ""}
+      className={`!bg-background ${
+        pathName === "/" ? "h-[100vh]" : "h-16"
+      } w-full flex flex-col items-center shadow-lg relative after:sm:w-72 after:md:w-1/2 z-50`}
     >
       <nav
         className="flex items-center justify-between w-4/5 pt-5 mx-auto"
@@ -36,14 +41,31 @@ export default function Heading() {
             />
           </button>
         </div>
-        <div className="items-center justify-between hidden w-1/2 font-medium md:flex lg:w-1/4 text-textMain">
-          <a href="#about" className="hover:text-secondary">
+        <div
+          className={`items-center justify-between hidden w-1/2 font-medium md:flex text-textMain ${
+            pathName === "/" ? "lg:w-1/4" : "lg:w-1/3"
+          }`}
+        >
+          {pathName !== "/" && (
+            <a href="/" className="text-xl font-bold hover:text-secondary">
+              Reza Saputra
+            </a>
+          )}
+          <a
+            href="http://localhost:3000/#about"
+            className="hover:text-secondary"
+          >
             About
           </a>
-          <a href="#portfolio" className="hover:text-secondary">
+          <a
+            href="/#portfolio"
+            className={`hover:text-secondary ${
+              pathName === "/portfolio" ? "text-secondary" : ""
+            }`}
+          >
             Portfolio
           </a>
-          <a href="#contact" className="hover:text-secondary">
+          <a href="/#contact" className="hover:text-secondary">
             Contact
           </a>
         </div>
@@ -79,21 +101,21 @@ export default function Heading() {
             <div className="-my-6 divide-y ">
               <div className="py-6 space-y-2 text-textMain">
                 <a
-                  href="#about"
+                  href="/#about"
                   className="block px-3 py-2 -mx-3 text-base font-semibold leading-7 rounded-lg hover:text-secondary"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   About
                 </a>
                 <a
-                  href="#portfolio"
+                  href="/#portfolio"
                   className="block px-3 py-2 -mx-3 text-base font-semibold leading-7 rounded-lg hover:text-secondary"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Portfolio
                 </a>
                 <a
-                  href="#contact"
+                  href="/#contact"
                   className="block px-3 py-2 -mx-3 text-base font-semibold leading-7 rounded-lg hover:text-secondary"
                   onClick={() => setMobileMenuOpen(false)}
                 >
@@ -105,19 +127,7 @@ export default function Heading() {
         </DialogPanel>
       </Dialog>
 
-      <div className="flex flex-col justify-center w-4/5 h-full text-textMain ">
-        <h1 className="text-3xl">
-          I&apos;m{" "}
-          <span className="text-4xl font-bold text-textMain">Reza Saputra</span>
-        </h1>
-        <h2 className="text-xl font-medium text-secondary">Web Developer</h2>
-        <a
-          href="#contact"
-          className="px-8 py-3 mt-5 transition duration-200 ease-in rounded-lg w-fit text-textMain bg-card hover:shadow-md"
-        >
-          Contact Me
-        </a>
-      </div>
+      {pathName === "/" && <Hero />}
     </header>
   );
 }

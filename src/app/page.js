@@ -1,6 +1,5 @@
 "use client";
 import About from "./_components/about";
-import Contact from "./_components/contact";
 import Experience from "./_components/experience";
 import Heading from "./_components/heading";
 import Portfolio from "./_components/portfolio";
@@ -14,18 +13,9 @@ import {
   faCircleChevronUp,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
-import {
-  Button,
-  Checkbox,
-  createTheme,
-  Footer,
-  Label,
-  Textarea,
-  TextInput,
-} from "flowbite-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { DateTime } from "luxon";
 import ContactMe from "./_components/contactMe";
+import FooterComponent from "./_components/footer";
 
 export default function Home() {
   const mySkills = [
@@ -200,14 +190,7 @@ export default function Home() {
         </div>
       </section>
       <ContactMe contacts={contacts} />
-      <Footer container className="bg-background">
-        <Footer.Copyright
-          href="#"
-          by="Reza Akbar Saputra"
-          year={DateTime.now().toFormat("yyyy")}
-          className="text-lg text-textMuted"
-        />
-      </Footer>
+      <FooterComponent />
     </main>
   );
 }
